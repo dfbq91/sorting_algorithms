@@ -16,17 +16,27 @@ void swap(int *number_one, int *number_two)
 }
 
 /**
- * bubble_sort - sorts an array of integers in
- * ascending order using the Bubble sort algorithm
- * @array: Array to be sorted
- * @size: The list to be printed
+ * insertion_sort_list - sorts an array of ints with dlinked list
+ * @list: head node of the doubly linked list
  * return: nothing
  */
-void bubble_sort(int *array, size_t size)
+void insertion_sort_list(listint_t **list)
 {
-	size_t i, j;
+	listint_t *current = *list;
 
-	if (size < 2)
+	while (current->next != NULL)
+	{
+		if (current > current->next)
+		{
+			current->next = current->prev;
+			current->prev->prev = current->prev;
+			
+				
+		}
+
+
+	}
+	if (size <= 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
