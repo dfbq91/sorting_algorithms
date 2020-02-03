@@ -30,13 +30,15 @@ void quick_sort(int *array, size_t size)
 /**
  * qs - sort an array of integers using recursion
  * @array: the array
- * @low: size of the array
- * @high: 
+ * @low: low of the array
+ * @high: high of the array
+ * @size: size of array
  * return: nothing
  */
 void qs(int *array, int low, int high, int size)
 {
 	int pivot;
+
 	if (low < high)
 	{
 		pivot = partition(array, low, high, size);
@@ -45,13 +47,22 @@ void qs(int *array, int low, int high, int size)
 	}
 }
 
+/**
+ * partition - sort an array of integers using recursion
+ * @array: the array
+ * @low: low of the array
+ * @high: high of the array
+ * @size: size of array
+ * Return: int as position of array
+ */
+
 int partition(int *array, int low, int high, int size)
 {
 	int pivot = array[high];
 	int i = (low - 1);
 	int j;
 
-	for(j = low; j <= high - 1; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] <= pivot)
 		{
@@ -69,5 +80,6 @@ int partition(int *array, int low, int high, int size)
 		swap(&(array[i + 1]), &array[high]);
 		print_array(array, size);
 	}
-	return(i + 1);
+
+	return (i + 1);
 }
