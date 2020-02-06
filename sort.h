@@ -26,5 +26,5 @@ void qs(int *array, int low, int high, int size);
 int partition(int *array, int low, int high, int size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
-
+void swap_llist(listint_t *first, listint_t *second, listint_t **list_head);
 #endif
